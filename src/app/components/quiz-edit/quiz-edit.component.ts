@@ -47,7 +47,7 @@ export class QuizEditComponent implements OnInit {
       .valueChanges()
       .subscribe((data: any) => {
         this.quiz = data;
-        console.log(this.quiz);
+        // console.log(this.quiz);
       });
 
     // Gauname quiz klausimus kaip masyva
@@ -61,8 +61,8 @@ export class QuizEditComponent implements OnInit {
   }
 
   createQuestion(form: NgForm) {
-    console.log('Create Question');
-    console.log(this.newQuestion);
+    // console.log('Create Question');
+    // console.log(this.newQuestion);
     this.questionsRef.push(this.newQuestion).then(function () {
       alert('Klausimas sekmingai pridetas');
     });
@@ -77,7 +77,7 @@ export class QuizEditComponent implements OnInit {
 
   selectQuestion(question: any) {
     this.seletedQuestion = question;
-    console.log(this.seletedQuestion);
+    // console.log(this.seletedQuestion);
   }
 
   addAnswer(selectedQuestion: any) {

@@ -14,11 +14,11 @@ export class QuizCreateComponent implements OnInit {
   constructor(private db: AngularFireDatabase) {}
 
   ngOnInit(): void {
-    console.log(this.quiz);
+    // console.log(this.quiz);
   }
 
   createQuiz(form: NgForm) {
-    console.log(this.quiz);
+    // console.log(this.quiz);
     // Validacija
 
     /* Pridėjimui naudojame list funkcija is firebase

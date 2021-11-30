@@ -62,7 +62,7 @@ export class QuizComponent implements OnInit {
   ) {
     // Gauname route prametra ID, kad zinotume, kuri quiz mums reikia atvaizduoti
     this.quizId = this.route.snapshot.paramMap.get('id');
-    console.log('Quiz ID: ' + this.quizId);
+    // console.log('Quiz ID: ' + this.quizId);
 
     // Jei naudojame toki buda, tuomet, ngFor dalyje turime naudoti | async pipe
     // https://angular.io/guide/observables-in-angular#async-pipe
@@ -71,10 +71,10 @@ export class QuizComponent implements OnInit {
     db.object('quizes/' + this.quizId)
       .valueChanges()
       .subscribe((data: any) => {
-        console.warn('Quiz data:');
+        // console.warn('Quiz data:');
         this.quiz = data;
         this.quizQuestions = data.questions;
-        console.warn(data);
+        // console.warn(data);
       });
   }
 
@@ -92,8 +92,8 @@ export class QuizComponent implements OnInit {
     this.userAnswers.push(userAnswer);
     this.countProgress();
 
-    console.log('Selected answer obj:');
-    console.log(this.selectedAnswerObj);
+    // console.log('Selected answer obj:');
+    // console.log(this.selectedAnswerObj);
 
     let foundAnswer = false;
     let foundId = 0;
@@ -110,8 +110,8 @@ export class QuizComponent implements OnInit {
      } else {
      } */
 
-    console.log('Vartotojo atsakymai: userAnswers kintamasis');
-    console.log(this.userAnswers);
+    // console.log('Vartotojo atsakymai: userAnswers kintamasis');
+    // console.log(this.userAnswers);
   }
 
   previousQuestion() {
@@ -119,13 +119,13 @@ export class QuizComponent implements OnInit {
     this.userAnswers.pop();
     this.countProgress();
     // Pasalinu paskutini masyvo elementa
-    console.log(this.userAnswers);
+    // console.log(this.userAnswers);
   }
 
   countProgress() {
     let questionsCount = Object.keys(this.quizQuestions).length;
     this.progress = (this.currentQuestion / questionsCount) * 100;
-    console.log('Progress: ' + this.progress);
+    // console.log('Progress: ' + this.progress);
 
     if (this.progress === 100) {
       // Jei progresas yra 100% rodome results puslapi
@@ -137,7 +137,7 @@ export class QuizComponent implements OnInit {
 
   /* Funckija kuri pereina per visus atsakymus ir susumuoja teisingai pasirinktus atsakymus */
   countResult() {
-    console.log(this.userAnswers);
+    // console.log(this.userAnswers);
     let score = 0;
     this.questionCount = 0;
     for (let i = 0; i < this.userAnswers.length; i++) {

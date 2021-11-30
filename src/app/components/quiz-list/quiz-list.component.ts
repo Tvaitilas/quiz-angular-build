@@ -17,7 +17,7 @@ export class QuizListComponent implements OnInit {
       .valueChanges()
       .subscribe((data: any) => {
         this.allQuizes = data;
-        console.log(this.allQuizes);
+        // console.log(this.allQuizes);
       });
   }
 }
